@@ -8,7 +8,10 @@ namespace CullenGlobalXAssessment {
                 Console.Error.WriteLine("Incorrect number of arguments entered.");
                 return;
             }
-            Sorter.sort(args[0]);
+            var filename = args[0];
+            var unsorted = NamesImporter.importNames(filename);
+            var sorted = Sorter.sort(unsorted);
+            NamesExporter.exportNames(sorted);
         }
     }
 }

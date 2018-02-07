@@ -5,16 +5,13 @@ using System.Linq;
 namespace CullenGlobalXAssessment {
     public class Sorter {
         /**
-         * Takes an input filename, reads that file,
-         * sorts the names contained in it alphabetically, first by last name,
-         * and then writes those names back to both console and disk.
+         * Takes an unsorted list of people, and outputs a correctly sorted
+         * version of that same list.
          */
-        public static void sort(string filename) {
-            var unsorted = NamesImporter.importNames(filename);
-            var sorted = unsorted.OrderBy(person => person.lastName)
+        public static List<Person> sort(List<Person> unsorted) {
+            return unsorted.OrderBy(person => person.lastName)
                                  .ThenBy(person => person.firstNames)
                                  .ToList();
-            NamesExporter.exportNames(sorted);
         }
     }
 }
