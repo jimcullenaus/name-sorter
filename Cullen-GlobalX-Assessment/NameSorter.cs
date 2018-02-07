@@ -8,6 +8,8 @@ namespace CullenGlobalXAssessment {
                 return;
             }
             Console.WriteLine(args[0]);
+            Sorter sorter = new Sorter(1);
+            Console.WriteLine(sorter.add(2));
         }
     }
 }

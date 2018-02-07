@@ -1,10 +1,10 @@
 ﻿using System;
 namespace CullenGlobalXAssessment {
     public class Sorter {
-        public Sorter() {
-        }
-        public static int add(int x, int y) {
-            return x + y;
+        private int number;
+        public Sorter(int number) => this.number = number;
+        public int add(int x) {
+            return x + number;
         }
     }
 }
