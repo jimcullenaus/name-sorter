@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CullenGlobalXAssessment {
     /**
-     * A person has a single last name and a single string of their first names
+     * A Person has a single last name and a single string of their first names
      */
     public class Person {
         public string firstNames { get; }

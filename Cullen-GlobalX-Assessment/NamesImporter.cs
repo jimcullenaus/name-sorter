@@ -3,6 +3,10 @@ using System.IO;
 using System.Collections.Generic;
 
 namespace CullenGlobalXAssessment {
+    /**
+     * Reads the names in a specified file and supplies them
+     * as a list of Persons.
+     */
     public class NamesImporter {
         public static List<Person> importNames(string filename) {
             string invalidNamesFileMessage = "The given names file was invalid.";
