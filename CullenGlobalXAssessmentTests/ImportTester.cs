@@ -39,20 +39,20 @@ namespace CullenGlobalXAssessmentTests {
             for (int i = 0; i < firstNames.Count; ++i) {
                 people.Add(new Person(firstNames[i], lastNames[i]));
             }
-            var testNames = NamesImporter.importNames(@"test-samples/simple-names.txt");
+            var testNames = NamesImporter.importNames("../../../test-samples/simple-names.txt");
             Assert.Equal(testNames, people);
         }
 
         [Fact]
         public void emptyFileTest() {
             var testName = new List<Person> { };
-            var people = NamesImporter.importNames(@"test-samples/blank.txt");
+            var people = NamesImporter.importNames("../../../test-samples/blank.txt");
             Assert.Equal(testName, people);
         }
 
         [Fact]
         public void invalidNameTest() {
-            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames(@"test-samples/no-first.txt"));
+            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames("../../../test-samples/no-first.txt"));
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace CullenGlobalXAssessmentTests {
             var codeBaseUrl = new Uri(Assembly.GetExecutingAssembly().CodeBase);
             var codeBasePath = Uri.UnescapeDataString(codeBaseUrl.AbsolutePath);
             var dirPath = Path.GetDirectoryName(codeBasePath);
-            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames(@"test-samples/no-permission.txt"));
+            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames("../../../test-samples/no-permission.txt"));
         }
     }
 }
