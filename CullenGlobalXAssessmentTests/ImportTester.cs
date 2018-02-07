@@ -3,11 +3,10 @@ using Xunit;
 using CullenGlobalXAssessment;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace CullenGlobalXAssessmentTests {
     public class ImportTester {
-        private string testingDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-
         [Fact]
         public void basicReadTest() {
             var firstNames = new List<String> {
@@ -40,25 +39,28 @@ namespace CullenGlobalXAssessmentTests {
             for (int i = 0; i < firstNames.Count; ++i) {
                 people.Add(new Person(firstNames[i], lastNames[i]));
             }
-            var testNames = NamesImporter.importNames(testingDir + "/test-samples/simple-names.txt");
+            var testNames = NamesImporter.importNames("./test-samples/simple-names.txt");
             Assert.Equal(testNames, people);
         }
 
         [Fact]
         public void emptyFileTest() {
             var testName = new List<Person> { };
-            var people = NamesImporter.importNames(testingDir + "/test-samples/blank.txt");
+            var people = NamesImporter.importNames("./test-samples/blank.txt");
             Assert.Equal(testName, people);
         }
 
         [Fact]
         public void invalidNameTest() {
-            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames(testingDir + "/test-samples/no-first.txt"));
+            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames("./test-samples/no-first.txt"));
         }
 
         [Fact]
         public void noPermissionTest() {
-            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames(testingDir + "/test-samples/no-permission.txt"));
+            var codeBaseUrl = new Uri(Assembly.GetExecutingAssembly().CodeBase);
+            var codeBasePath = Uri.UnescapeDataString(codeBaseUrl.AbsolutePath);
+            var dirPath = Path.GetDirectoryName(codeBasePath);
+            Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames("./test-samples/no-permission.txt"));
         }
     }
 }

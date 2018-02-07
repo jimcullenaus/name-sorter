@@ -12,7 +12,7 @@ namespace CullenGlobalXAssessment {
                         Console.WriteLine(person);
                     }
                 }
-            } catch (IOException e) {
+            } catch (IOException) {
                 Console.Error.WriteLine("Was unable to write to the file.");
             }
         }
