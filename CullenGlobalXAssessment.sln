@@ -1,7 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cullen-GlobalX-Assessment", "Cullen-GlobalX-Assessment\Cullen-GlobalX-Assessment.csproj", "{BECF1DEC-7D8B-4FCB-AC21-D157459F7D90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CullenGlobalXAssessment", "Cullen-GlobalX-Assessment\CullenGlobalXAssessment.csproj", "{BECF1DEC-7D8B-4FCB-AC21-D157459F7D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterTester", "NameSorterTester\NameSorterTester.csproj", "{3CCD265F-8AC2-4309-B34B-75AD64C32E24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{BECF1DEC-7D8B-4FCB-AC21-D157459F7D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BECF1DEC-7D8B-4FCB-AC21-D157459F7D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BECF1DEC-7D8B-4FCB-AC21-D157459F7D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCD265F-8AC2-4309-B34B-75AD64C32E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCD265F-8AC2-4309-B34B-75AD64C32E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCD265F-8AC2-4309-B34B-75AD64C32E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCD265F-8AC2-4309-B34B-75AD64C32E24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

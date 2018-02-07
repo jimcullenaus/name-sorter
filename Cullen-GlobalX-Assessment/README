@@ -1,0 +1,5 @@
+This programme takes as an argument the path to a file containing a list of names, which it reads and sorts alphabetically first by last name, then by first names, before writing the sorted file to `$WD/sorted-names-list.txt` and to the console.
+
+The sorting function used is the default C# `string.Sort()` method, including any quirks relating to case sensitivity and non-ASCII characters that may contain.
+
+If any errors occur, including inability to read or write the required files or an incorrectly formatted input file, the programme prints an error to console and exits.
