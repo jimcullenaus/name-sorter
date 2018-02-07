@@ -8,4 +8,4 @@ install:
 
 script:
 - dotnet build
-- dotnet test CullenGlobalXAssessmentTests.csproj
+- dotnet test CullenGlobalXAssessmentTests/CullenGlobalXAssessmentTests.csproj
