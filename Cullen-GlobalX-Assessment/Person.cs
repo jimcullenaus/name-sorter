@@ -4,8 +4,8 @@ namespace CullenGlobalXAssessment {
      * A person has a single last name and a single string of their first names
      */
     public class Person {
-        private string firstNames { get; }
-        private string lastName { get; }
+        public string firstNames { get; }
+        public string lastName { get; }
         public Person(string firstNames, string lastName) {
             this.firstNames = firstNames;
             this.lastName = lastName;

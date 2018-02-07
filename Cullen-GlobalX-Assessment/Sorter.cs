@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CullenGlobalXAssessment {
     public class Sorter {
@@ -9,24 +10,11 @@ namespace CullenGlobalXAssessment {
          * and then writes those names back to both console and disk.
          */
         public static void sort(string filename) {
-            
-        }
-
-        private List<string> fileImporter(string filename) {
-            var names = new List<String> {
-                "Janet Parsons",
-                "Vaughn Lewis",
-                "Adonis Julius Archer",
-                "Shelby Nathan Yoder",
-                "Marin Alvarez",
-                "London Lindsey",
-                "Beau Tristan Bentley",
-                "Leo Gardner",
-                "Hunter Uriah Mathew Clarke",
-                "Mikayla Lopez",
-                "Frankie Conner Ritter"
-            };
-            return names;
+            var unsorted = NamesImporter.importNames(filename);
+            var sorted = unsorted.OrderBy(person => person.lastName)
+                                 .ThenBy(person => person.firstNames)
+                                 .ToList();
+            NamesExporter.exportNames(sorted);
         }
     }
 }

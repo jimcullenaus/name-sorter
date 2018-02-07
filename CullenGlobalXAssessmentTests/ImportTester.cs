@@ -10,7 +10,6 @@ namespace CullenGlobalXAssessmentTests {
 
         [Fact]
         public void basicReadTest() {
-            Console.WriteLine(testingDir);
             var firstNames = new List<String> {
                 "Janet",
                 "Vaughn",
@@ -47,7 +46,6 @@ namespace CullenGlobalXAssessmentTests {
 
         [Fact]
         public void emptyFileTest() {
-            Console.WriteLine(testingDir);
             var testName = new List<Person> { };
             var people = NamesImporter.importNames(testingDir + "/test-samples/blank.txt");
             Assert.Equal(testName, people);
@@ -55,13 +53,11 @@ namespace CullenGlobalXAssessmentTests {
 
         [Fact]
         public void invalidNameTest() {
-            Console.WriteLine(testingDir);
             Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames(testingDir + "/test-samples/no-first.txt"));
         }
 
         [Fact]
         public void noPermissionTest() {
-            Console.WriteLine(testingDir);
             Assert.Throws<InvalidNamesFileException>(() => NamesImporter.importNames(testingDir + "/test-samples/no-permission.txt"));
         }
     }
