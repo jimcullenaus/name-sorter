@@ -1,2 +1,11 @@
 language: csharp
 solution: CullenGlobalXAssessment.sln
+mono: none
+dotnet: 1.0.1
+
+install:
+- dotnet restore
+
+script:
+- dotnet build
+- dotnet test CullenGlobalXAssessmentTests.csproj
