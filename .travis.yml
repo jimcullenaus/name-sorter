@@ -1,7 +1,7 @@
 language: csharp
 solution: CullenGlobalXAssessment.sln
 mono: none
-dotnet: 1.0.1
+dotnet: 2.0.5
 
 install:
 - dotnet restore
